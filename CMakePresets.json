@@ -1,0 +1,35 @@
+{
+    "version": 8,
+    "configurePresets": [
+        {
+            "name": "watcom_win",
+            "displayName": "OpenWatcom - Windows",
+            "description": "Configure for OpenWatcom with Windows paths",
+            "generator": "Watcom WMake",
+            "binaryDir": "${sourceDir}/build/${presetName}",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
+                "CMAKE_SYSTEM_NAME": "DOS",
+                "CMAKE_SYSTEM_PROCESSOR": "I86"
+            },
+            "environment": {
+                "WATCOM": "C:\\WATCOM",
+                "EDPATH": "C:\\WATCOM\\EDDAT",
+                "WWINHELP": "C:\\WATCOM\\BINW",
+                "WHTMLHELP": "C:\\WATCOM\\BINNT\\HELP",
+                "WIPFC": "C:\\WATCOM\\WIPFC",
+                "PATH": "C:\\WATCOM\\BINNT;C:\\WATCOM\\BINW;$penv{PATH}",
+                "INCLUDE": "C:\\WATCOM\\H;C:\\WATCOM\\H\\NT;C:\\WATCOM\\H\\NT\\DIRECTX;C:\\WATCOM\\H\\NT\\DDK;$penv{INCLUDE}"
+            }
+        }
+    ],
+    "packagePresets": [
+        {
+            "name": "OpenWatcom - Build Windows",
+            "description": "",
+            "displayName": "",
+            "configurePreset": "watcom_win"
+        }
+    ]
+}
